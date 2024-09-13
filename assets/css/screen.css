@@ -20,3 +20,111 @@
 @import "misc/utils.css";
 @import "misc/portal.css";
 @import "misc/animations.css";
+
+
+/* Custom for Radius */
+
+@font-face {
+  font-family: "Avenir", sans-serif;
+  src: url('../fonts/avenir.woff2') format('woff2'), url('../fonts/avenir.woff') format('woff');
+}
+@font-face {
+  font-family: "AvenirCondensed", sans-serif;
+  src: url('../fonts/avenir-condensed.woff2') format('woff2'), url('../fonts/avenir-condensed.woff') format('woff');
+}
+
+
+body {
+  font-family: "Avenir", sans-serif;
+  background-color: #F3E9E2;
+}
+
+.font-condensed {
+  font-family: "AvenirCondensed", sans-serif;
+}
+
+.radius-button {
+  background-color: #F0B85E !important;
+  color: #BD4735 !important;
+}
+
+.green-button {
+  background-color: #4A5942;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "AvenirCondensed", sans-serif;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+}
+
+.gh-canvas--mid {
+  --content-width: 900px;
+}
+.gh-canvas--wide {
+  --content-width: 1400px;
+}
+
+.font-20 {
+  font-size: 16px;
+}
+@media (min-width: 800px) {
+  .font-20 {
+    font-size: 20px;
+  }
+}
+
+.tc {
+  text-align: center;
+}
+
+.vision-cols {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  display: grid;
+  gap: 10rem;
+}
+
+.vision-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 360px;
+  margin: auto;
+}
+
+.vision-title {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.vision-image {
+  max-width: 216px;
+  margin: auto;
+}
+
+@media (min-width: 800px) {
+  .vision-cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4rem;
+  }
+  .vision-col {height: 100%;}
+  .vision-title {
+    font-size: 26px;
+  }
+}
+
+.yellow-hr {
+  border: 0;
+  border-top: 1px solid #F0B85E;
+}
+
+.header-title {
+  font-size: 36px;
+  font-weight: normal;
+  margin-top: 8rem;
+}
+@media (min-width: 800px) {
+  .header-title {
+    font-size: 48px;
+  }
+}
