@@ -25,11 +25,11 @@
 /* Custom for Radius */
 
 @font-face {
-  font-family: "Avenir", sans-serif;
+  font-family: "Avenir";
   src: url('../fonts/avenir.woff2') format('woff2'), url('../fonts/avenir.woff') format('woff');
 }
 @font-face {
-  font-family: "AvenirCondensed", sans-serif;
+  font-family: "AvenirCondensed";
   src: url('../fonts/avenir-condensed.woff2') format('woff2'), url('../fonts/avenir-condensed.woff') format('woff');
 }
 
@@ -55,6 +55,7 @@ body {
   font-family: "AvenirCondensed", sans-serif;
   padding: 1.5rem 4rem;
   display: inline-block;
+  font-weight: 700;
 }
 
 .gh-canvas--mid {
@@ -126,5 +127,120 @@ body {
 @media (min-width: 800px) {
   .header-title {
     font-size: 48px;
+  }
+}
+
+#visit-us-details {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  margin: 4rem auto 8rem;
+  width: 100%;
+  max-width: 64rem;
+}
+#visit-us-details > div {
+  width: 45%;
+}
+.visit-us-heading {
+  font-size: 2rem;
+  margin-bottom: 2.4rem;
+  color: #BD4735;
+  text-transform: uppercase;
+}
+
+
+#image-carousel {
+  margin-bottom: 10rem;
+}
+.splide__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feed-title {
+  font-size: 2rem !important;
+}
+
+.feed-excerpt {
+  font-size: 1.8rem;
+}
+@media (min-width: 800px) {
+  .feed-title {
+    font-size: 2.4rem !important;
+  }
+  .feed-excerpt {
+    font-size: 2rem;
+  }
+}
+
+.gh-foot {
+  background-color: #4A5942;
+  color: #F3E9E2;
+}
+.gh-foot a {
+  color: #F3E9E2;
+  transition: border-color 0.2s;
+  border-bottom: 1px solid transparent;
+}
+.gh-foot a:hover {
+  color: inherit;
+  border-color: currentColor;
+}
+.gh-foot {
+  font-size: 2rem;
+  padding-bottom: 6.4rem;
+}
+@media (min-width: 800px) {
+.gh-foot {
+    font-size: 2.6rem;
+  }
+}
+.gh-footer-cols {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+@media (min-width: 800px) {
+  .gh-footer-cols {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.gh-footer-logo {
+  width: 240px;
+  max-width: 50%;
+}
+.footer-menu {
+  max-width: 32rem;
+}
+.footer-menu ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.footer-menu li {
+    flex: 0 0 calc(50% - 1rem);
+}
+
+@media (max-width: 600px) {
+    .footer-menu li {
+        flex: 0 0 100%;
+    }
+}
+
+.footer-base {
+  margin-top: 2.4rem;
+  font-size: 1.6rem;
+  font-size: 1.4rem;
+}
+@media (min-width: 800px) {
+  .footer-base {
+    margin-top: 4.8rem;
+  text-align: right;
   }
 }

@@ -1,5 +1,12 @@
 {{!< default}}
 
+<script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
+
 <main class="site-main">
 
     <div class="font-20 gh-canvas gh-canvas--mid tc">
@@ -43,27 +50,32 @@
         <h2 class="header-title tc">Visit Us</h2>
     </header>
 
-    <div class="gh-canvas gh-canvas--wide">
-        <div class="vision-cols">
-            <div class="vision-col tc">
-                <img src="{{asset 'home-farms.png'}}" class="vision-image" alt="Our Farms &amp; Sourcing Standards" />
-                <h2 class="vision-title">Our Farms &amp; Sourcing Standards</h2>
-                <p class="font-20">We only source from the highest integrity from across Texas.</p>
-                <p class="font-20"><a href="/farms/" class="green-button">View farms</a></p>
+    <div class="gh-canvas gh-canvas--mid">
+        <div id="visit-us-details" class="tc">
+            <div>
+                <h2 class="visit-us-heading font-condensed">Address</h2>
+                <p class="font-20">1912 East 7th St.<br>Austin, Texas 78704<br>Google Maps</p>
             </div>
-            <div class="vision-col tc">
-                <img src="{{asset 'home-recipes.png'}}" class="vision-image" alt="Our Farms &amp; Sourcing Standards" />
-                <h2 class="vision-title">Seasonal Recipes</h2>
-                <p class="font-20">Monthly recipes tailored to in-season products and what’s next in season.</p>
-                <p class="font-20"><a href="/receipes/" class="green-button">View recipes</a></p>
-            </div>
-            <div class="vision-col tc">
-                <img src="{{asset 'home-events.png'}}" class="vision-image" alt="Our Farms &amp; Sourcing Standards" />
-                <h2 class="vision-title">Upcoming Events</h2>
-                <p class="font-20">Learn about the connection between farming and health.</p>
-                <p class="font-20"><a href="/events/" class="green-button">View events</a></p>
+            <div>
+                <h2 class="visit-us-heading font-condensed">Hours</h2>
+                <p class="font-20">Open Daily<br>10am–8pm</p>
             </div>
         </div>
+        <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img src="{{asset 'slider-1.jpg'}}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset 'slider-2.jpg'}}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset 'slider-3.jpg'}}" alt="">
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
 
     <hr class="yellow-hr">
@@ -87,5 +99,9 @@
     </div>
 
 </main>
+
+<script>
+    new Splide('#image-carousel', { heightRatio: 0.6, pagination: false }).mount();
+</script>
 
 {{#contentFor "body_class"}}{{#if @site.cover_image}} with-full-cover is-head-transparent{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}
