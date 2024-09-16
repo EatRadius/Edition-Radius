@@ -1,45 +1,64 @@
 <article class="single {{post_class}}">
 
     {{#match @page.show_title_and_feature_image}}
-        <header class="single-header gh-canvas">
-            {{#is "post"}}
-            <div class="single-meta">
-                <span class="single-meta-item single-meta-date">
-                    <time datetime="{{date format="YYYY-MM-DD"}}">
-                        {{date published_at}}
-                    </time>
-                </span>
-                <span class="single-meta-item single-meta-length">
-                    {{reading_time}}
-                </span>
-                {{#primary_tag}}
-                    <span class="single-meta-item single-meta-tag">
-                        <a class="post-tag post-tag-{{slug}}" href="{{url}}">{{name}}</a>
+        <header class="single-header gh-canvas"{{#match width "full-header"}} style="margin-top: 0;margin-bottom:8rem;position:relative;height:67vw;max-height:900px"{{/match}}>
+
+            {{#match width "full-header"}}
+            <div></div>
+
+                {{#if feature_image}}
+                    {{#unless no_image}}
+                        <figure class="single-media kg-width-full" style="margin-top: 0;background-color:#111;position: absolute;top:0;right:0;bottom:0;left:0">
+                            <img srcset="{{> "srcset"}}" sizes="(min-width: 1023px) 920px, calc(90vw)"
+                                src="{{img_url feature_image size="l"}}"
+                                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                                style="height:100%;object-fit: cover;opacity:50%;">
+                        </figure>
+                    {{/unless}}
+                {{/if}}
+
+                <h1 class="single-title" style="z-index: 1;color:#fff">{{title}}</h1>
+
+            {{else}}
+                {{#is "post"}}
+                <div class="single-meta">
+                    <span class="single-meta-item single-meta-date">
+                        <time datetime="{{date format="YYYY-MM-DD"}}">
+                            {{date published_at}}
+                        </time>
                     </span>
-                {{/primary_tag}}
-            </div>
-            {{/is}}
-
-            <h1 class="single-title">{{title}}</h1>
-
-            {{#if custom_excerpt}}
-                <div class="single-excerpt">
-                    {{custom_excerpt}}
+                    <span class="single-meta-item single-meta-length">
+                        {{reading_time}}
+                    </span>
+                    {{#primary_tag}}
+                        <span class="single-meta-item single-meta-tag">
+                            <a class="post-tag post-tag-{{slug}}" href="{{url}}">{{name}}</a>
+                        </span>
+                    {{/primary_tag}}
                 </div>
-            {{/if}}
+                {{/is}}
 
-            <div class="author-name" style="display: none;">{{authors}}</div>
+                <h1 class="single-title">{{title}}</h1>
 
-            {{#if feature_image}}
-            {{#unless no_image}}
-                <figure class="single-media kg-width-{{width}}">
-                    <img srcset="{{> "srcset"}}" sizes="(min-width: 1023px) 920px, calc(90vw)" src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
-                    {{#if feature_image_caption}}
-                        <figcaption>{{feature_image_caption}}</figcaption>
-                    {{/if}}
-                </figure>
-            {{/unless}}
-            {{/if}}
+                {{#if custom_excerpt}}
+                    <div class="single-excerpt">
+                        {{custom_excerpt}}
+                    </div>
+                {{/if}}
+
+                <div class="author-name" style="display: none;">{{authors}}</div>
+
+                {{#if feature_image}}
+                {{#unless no_image}}
+                    <figure class="single-media kg-width-{{width}}">
+                        <img srcset="{{> "srcset"}}" sizes="(min-width: 1023px) 920px, calc(90vw)" src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}">
+                        {{#if feature_image_caption}}
+                            <figcaption>{{feature_image_caption}}</figcaption>
+                        {{/if}}
+                    </figure>
+                {{/unless}}
+                {{/if}}
+            {{/match}}
         </header>
     {{/match}}
 
