@@ -36,7 +36,28 @@
 
 body {
   font-family: "Avenir", sans-serif;
+}
+
+body,
+.gh-head, 
+.is-head-brand:not(.is-head-transparent) .gh-head,
+.is-head-open.is-head-transparent #gh-head,
+.is-head-open:is(.is-head-transparent, .is-head-brand) #gh-head .gh-head-actions {
   background-color: #F3E9E2;
+}
+.is-head-brand:not(.is-head-transparent) .gh-head .nav a,
+.is-head-brand:not(.is-head-transparent) .gh-head-description,
+.is-head-brand:not(.is-head-transparent) .gh-head-link,
+.is-head-brand:not(.is-head-transparent) .gh-head-logo,
+.is-head-brand:not(.is-head-transparent) .gh-head-logo a,
+.is-head-brand:not(.is-head-transparent) .gh-search,
+.is-head-brand:not(.is-head-transparent) .gh-social,
+.is-head-brand:not(.is-head-transparent) .nav-more-toggle {
+  color: inherit;
+}
+.is-head-brand:not(.is-head-transparent) .gh-burger:after,
+.is-head-brand:not(.is-head-transparent) .gh-burger:before {
+  background-color: currentColor;
 }
 
 .font-condensed {
