@@ -25,7 +25,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <div class="vision-cols">
             <div class="vision-col tc">
                 <img src="{{asset 'home-farms.png'}}" class="vision-image" alt="Our Farms &amp; Sourcing Standards" />
-                <h2 class="vision-title">Our Farms &amp; Sourcing Standards</h2>
+                <h2 class="vision-title">Sourcing Philosophy</h2>
                 <p class="font-20">We only source from the highest integrity from across Texas.</p>
                 <p class="font-20"><a href="/farms/" class="green-button">View farms</a></p>
             </div>
@@ -61,17 +61,20 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
                 <p class="font-20">Open Daily<br>10am–8pm</p>
             </div>
         </div>
-        <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+        <section id="image-carousel" class="splide" aria-label="Images of Radius Butcher & Grocery">
             <div class="splide__track">
                 <ul class="splide__list">
                     <li class="splide__slide">
-                        <img src="{{asset 'slider-1.jpg'}}" alt="">
+                        <img src="{{asset 'V1.jpeg'}}" alt="">
                     </li>
                     <li class="splide__slide">
-                        <img src="{{asset 'slider-2.jpg'}}" alt="">
+                        <img src="{{asset 'V2.jpeg'}}" alt="">
                     </li>
                     <li class="splide__slide">
-                        <img src="{{asset 'slider-3.jpg'}}" alt="">
+                        <img src="{{asset 'V3.jpeg'}}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset 'V4.jpeg'}}" alt="">
                     </li>
                 </ul>
             </div>
@@ -85,6 +88,10 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             <h2 class="header-title tc">{{@custom.feed_title}}</h2>
         {{/if}}
     </header>
+
+    {{#if @custom.show_featured_posts}}
+        {{> "featured-posts"}}
+    {{/if}}
 
     {{#get "posts" limit="5" include="tag,author"}}
     <div class="post-feed{{#match @custom.feed_layout "!=" "Minimal"}} expanded{{/match}}{{#match @custom.feed_layout "Right thumbnail"}} right-thumbnail{{/match}}{{#match @custom.feed_layout "Text-only"}} text-only{{/match}} gh-feed gh-canvas">
