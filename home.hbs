@@ -93,7 +93,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         {{> "featured-posts"}}
     {{/if}}
 
-    {{#get "posts" limit="5" include="tag,author"}}
+    {{#get "posts" limit="5" include="tag,authors"}}
     <div class="post-feed{{#match @custom.feed_layout "!=" "Minimal"}} expanded{{/match}}{{#match @custom.feed_layout "Right thumbnail"}} right-thumbnail{{/match}}{{#match @custom.feed_layout "Text-only"}} text-only{{/match}} gh-feed gh-canvas">
         {{#foreach posts}}
             {{> "loop"}}
