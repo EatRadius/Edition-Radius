@@ -2,11 +2,13 @@
 
 <main class="site-main">
 
+    {{#if @custom.show_featured_posts}}
+        {{> "featured-posts"}}
+    {{/if}}
+
     <header class="feed-header gh-canvas">
         {{#if @custom.feed_title}}
-            <div class="feed-header-wrapper">
-                <h2 class="feed-header-title">{{@custom.feed_title}}</h2>
-            </div>
+            <h2 class="header-title tc">{{@custom.feed_title}}</h2>
         {{/if}}
     </header>
 
@@ -20,4 +22,4 @@
 
 </main>
 
-{{#contentFor "body_class"}}{{#if @site.cover_image}} with-full-cover is-head-transparent{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}
+{{#contentFor "body_class"}} with-full-cover no-cover-image{{#if @member}} logged-in{{/if}}{{/contentFor}}

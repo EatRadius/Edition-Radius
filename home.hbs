@@ -1,0 +1,114 @@
+{{!< default}}
+
+<script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
+
+<main class="site-main">
+
+    <div class="font-20 gh-canvas gh-canvas--mid tc">
+        <p>Radius is a farm-to-table butcher and grocery in East Austin that sources from trusted Texas farms. Radius combines the
+        abundance and localism of a farmer’s market with the convenience of a daily grocery store. The store has everything you
+        need to cook seasonal homemade meals — local, pastured meat along with local, organic produce, grains, eggs, cheeses,
+        and wild-caught Gulf seafood. No more, no less. No towering center aisles of processed foods, no endless options in
+        every subcategory. Just a curated selection of the most delicious and nutritious local food. Radius is designed for
+        health enthusiasts, foodies, and localists who want to nourish their bodies and support their local food ecosystem.
+        </p>
+
+        <p class="tc" style="margin-top: calc(3rem + 5%)"><a href="/about/" class="green-button">Learn more</a></p>
+    </div>
+
+    <div class="gh-canvas gh-canvas--wide">
+        <div class="vision-cols">
+            <div class="vision-col tc">
+                <img src="{{asset 'home-farms.png'}}" class="vision-image" alt="Our Farms &amp; Sourcing Standards" />
+                <h2 class="vision-title">Sourcing Philosophy</h2>
+                <p class="font-20">We only source from the highest integrity from across Texas.</p>
+                <p class="font-20"><a href="/farms/" class="green-button">View farms</a></p>
+            </div>
+            <div class="vision-col tc">
+                <img src="{{asset 'home-recipes.png'}}" class="vision-image" alt="Our Farms &amp; Sourcing Standards" />
+                <h2 class="vision-title">Seasonal Recipes</h2>
+                <p class="font-20">Monthly recipes tailored to in-season products and what’s next in season.</p>
+                <p class="font-20"><a href="/receipes/" class="green-button">View recipes</a></p>
+            </div>
+            <div class="vision-col tc">
+                <img src="{{asset 'home-events.png'}}" class="vision-image" alt="Our Farms &amp; Sourcing Standards" />
+                <h2 class="vision-title">Upcoming Events</h2>
+                <p class="font-20">Learn about the connection between farming and health.</p>
+                <p class="font-20"><a href="/events/" class="green-button">View events</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <hr class="yellow-hr">
+
+    <header class="feed-header gh-canvas">
+        <h2 class="header-title tc">Visit Us</h2>
+    </header>
+
+    <div class="gh-canvas gh-canvas--mid">
+        <div id="visit-us-details" class="tc">
+            <div>
+                <h2 class="visit-us-heading font-condensed">Address</h2>
+                <p class="font-20">1912 East 7th St.<br>Austin, Texas 78704<br>Google Maps</p>
+            </div>
+            <div>
+                <h2 class="visit-us-heading font-condensed">Hours</h2>
+                <p class="font-20">Open Daily<br>10am–8pm</p>
+            </div>
+        </div>
+        <section id="image-carousel" class="splide" aria-label="Images of Radius Butcher & Grocery">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img src="{{asset 'V1.jpeg'}}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset 'V2.jpeg'}}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset 'V3.jpeg'}}" alt="">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="{{asset 'V4.jpeg'}}" alt="">
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <hr class="yellow-hr">
+
+    <header class="feed-header gh-canvas">
+        {{#if @custom.feed_title}}
+            <h2 class="header-title tc">{{@custom.feed_title}}</h2>
+        {{/if}}
+    </header>
+
+    {{#if @custom.show_featured_posts}}
+        {{> "featured-posts"}}
+    {{/if}}
+
+    {{#get "posts" limit="5" include="tag,authors"}}
+    <div class="post-feed{{#match @custom.feed_layout "!=" "Minimal"}} expanded{{/match}}{{#match @custom.feed_layout "Right thumbnail"}} right-thumbnail{{/match}}{{#match @custom.feed_layout "Text-only"}} text-only{{/match}} gh-feed gh-canvas">
+        {{#foreach posts}}
+            {{> "loop"}}
+        {{/foreach}}
+    </div>
+    {{/get}}
+
+    <div class="gh-canvas tc" style="margin-top: 4rem;">
+    <p class="font-20"><a href="/blog/" class="green-button">View all posts</a></p>
+    </div>
+
+</main>
+
+<script>
+    new Splide('#image-carousel', { heightRatio: 0.6, pagination: false }).mount();
+</script>
+
+{{#contentFor "body_class"}}{{#if @site.cover_image}} with-full-cover is-head-transparent{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}

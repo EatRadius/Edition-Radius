@@ -20,3 +20,249 @@
 @import "misc/utils.css";
 @import "misc/portal.css";
 @import "misc/animations.css";
+
+
+/* Custom for Radius */
+
+@font-face {
+  font-family: "AvenirMedium";
+  src: url('../fonts/avenir.woff2') format('woff2'), url('../fonts/avenir.woff') format('woff');
+}
+@font-face {
+  font-family: "AvenirCondensed";
+  src: url('../fonts/avenir-condensed.woff2') format('woff2'), url('../fonts/avenir-condensed.woff') format('woff');
+}
+
+
+body {
+  font-family: "AvenirMedium", sans-serif;
+}
+
+body {
+  background-color: #F3E9E2;
+}
+
+.font-condensed {
+  font-family: "AvenirCondensed", sans-serif;
+}
+
+.radius-button {
+  background-color: #F0B85E !important;
+  color: #BD4735 !important;
+}
+
+.green-button {
+  background-color: var(--ghost-accent-color);
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "AvenirCondensed", sans-serif;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  font-weight: 700;
+}
+button.green-button {
+  border: none;
+  cursor: pointer;
+}
+
+.gh-canvas--mid {
+  --content-width: 900px;
+}
+.gh-canvas--wide {
+  --content-width: 1400px;
+}
+
+.font-20 {
+  font-size: 16px;
+}
+@media (min-width: 800px) {
+  .font-20 {
+    font-size: 20px;
+  }
+}
+
+.tc {
+  text-align: center;
+}
+
+.vision-cols {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  display: grid;
+  gap: 10rem;
+}
+
+.vision-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 360px;
+  margin: auto;
+}
+
+.vision-title {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.vision-image {
+  max-width: 216px;
+  margin: auto;
+}
+
+@media (min-width: 800px) {
+  .vision-cols {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4rem;
+  }
+  .vision-col {height: 100%;}
+  .vision-title {
+    font-size: 26px;
+  }
+}
+
+.yellow-hr {
+  border: 0;
+  border-top: 1px solid #F0B85E;
+}
+
+.header-title {
+  font-size: 36px;
+  font-weight: normal;
+  margin-top: 8rem;
+  margin-bottom: 6rem;
+}
+@media (min-width: 800px) {
+  .header-title {
+    font-size: 48px;
+  }
+}
+
+#visit-us-details {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  margin: 0 auto 8rem;
+  width: 100%;
+  max-width: 64rem;
+}
+#visit-us-details > div {
+  width: 45%;
+}
+.visit-us-heading {
+  font-size: 2rem;
+  margin-bottom: 2.4rem;
+  color: #BD4735;
+  text-transform: uppercase;
+}
+
+
+#image-carousel {
+  margin-bottom: 10rem;
+}
+.splide__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.gh-foot {
+  margin-top: 12rem;
+  background-color: var(--ghost-accent-color);
+  color: #F3E9E2;
+}
+.gh-foot a {
+  color: #F3E9E2;
+  transition: border-color 0.2s;
+  border-bottom: 1px solid transparent;
+}
+.gh-foot a:hover {
+  color: inherit;
+  border-color: currentColor;
+}
+.gh-foot {
+  font-size: 2rem;
+  padding-bottom: 6.4rem;
+}
+@media (min-width: 800px) {
+.gh-foot {
+    font-size: 2.6rem;
+  }
+}
+.gh-footer-cols {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+@media (min-width: 800px) {
+  .gh-footer-cols {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.gh-footer-logo {
+  width: 240px;
+  max-width: 50%;
+}
+.footer-menu {
+  max-width: 32rem;
+}
+.footer-menu ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.footer-menu li {
+    flex: 0 0 calc(50% - 1rem);
+}
+
+@media (max-width: 600px) {
+    .footer-menu li {
+        flex: 0 0 100%;
+    }
+}
+
+.footer-base {
+  margin-top: 2.4rem;
+  font-size: 1.6rem;
+  font-size: 1.4rem;
+}
+@media (min-width: 800px) {
+  .footer-base {
+    margin-top: 4.8rem;
+    text-align: right;
+  }
+}
+
+.featured-wrapper {
+  padding-top: 0;
+  margin-bottom: 8rem;
+}
+.featured-title {
+  border-color: #222;
+}
+
+.splide__arrow {
+  background-color: #fff !important;
+  height: 3em !important;
+  width: 3em !important;
+}
+
+.related-wrapper {
+  background-color: transparent;
+}
+
+.no-cover-image.with-full-cover .cover:before {
+  display: none;
+}
+.no-cover-image .cover .cover-description {
+  color: inherit;
+}
+.no-cover-image .cover img {
+  display: none;
+}
