@@ -87,7 +87,12 @@
       },
       "featured_title": {
         "type": "text",
-        "default": "Featured articles",
+        "default": "Featured posts",
+        "group": "homepage"
+      },
+      "recent_title": {
+        "type": "text",
+        "default": "Recent posts",
         "group": "homepage"
       },
       "feed_title": {
