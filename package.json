@@ -90,11 +90,6 @@
         "default": "Featured Posts",
         "group": "homepage"
       },
-      "recent_title": {
-        "type": "text",
-        "default": "Recent Posts",
-        "group": "homepage"
-      },
       "feed_title": {
         "type": "text",
         "default": "Latest",
