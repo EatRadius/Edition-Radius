@@ -44,6 +44,7 @@ body {
 
 .font-condensed {
   font-family: "AvenirCondensed", sans-serif;
+  font-weight: 400 !important;
 }
 
 .radius-button {
@@ -58,7 +59,6 @@ body {
   font-family: "AvenirCondensed", sans-serif;
   padding: 1.5rem 4rem;
   display: inline-block;
-  font-weight: 700;
 }
 button.green-button {
   border: none;
@@ -136,6 +136,16 @@ button.green-button {
   .header-title {
     font-size: 48px;
   }
+}
+
+.gh-head-actions,
+.gh-head-menu,
+.gh-head-btn.gh-btn,
+.post-feed.expanded .feed-title,
+.featured-wrapper .post-title,
+.single-title,
+:where(h1, h2, h3, h4, h5, h6) {
+  font-weight: 400;
 }
 
 #visit-us-details {
@@ -265,4 +275,13 @@ button.green-button {
 }
 .no-cover-image .cover img {
   display: none;
+}
+
+@media (max-width: 767px) {
+  .cover-description {
+    font-size: 2.2rem;
+  }
+}
+.with-full-cover.half-cover .cover {
+  height: 60vh;
 }
