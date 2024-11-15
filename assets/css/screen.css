@@ -50,6 +50,7 @@ body {
 .radius-button {
   background-color: #F0B85E !important;
   color: #BD4735 !important;
+  text-transform: uppercase;
 }
 
 .green-button {
