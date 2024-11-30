@@ -145,8 +145,15 @@ button.green-button {
 .post-feed.expanded .feed-title,
 .featured-wrapper .post-title,
 .single-title,
+.single-meta,
 :where(h1, h2, h3, h4, h5, h6) {
   font-weight: 400;
+}
+
+@media (max-width:767px) {
+  #gh-head .nav a {
+    font-weight: 400;
+  }
 }
 
 #visit-us-details {
